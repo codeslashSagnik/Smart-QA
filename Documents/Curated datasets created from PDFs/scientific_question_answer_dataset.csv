@@ -1,0 +1,131 @@
+Question,Context,GroundTruth
+What does this paper present?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+",This paper presents an overview of a quality scoring system that utilizes pre-trained deep neural network models.
+What types of DL models are used in the quality scoring system?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+","Two types of DL models, a classification and extractive question answering (EQA) models are used in the quality scoring system."
+How are abstracts classified in this system?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+","The abstracts of the scientific literature are classified into two groups, in-vivo and in-vitro."
+What types of information are extracted by the question and answering model?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+","The question and answering model extracts information such as animal type, the number of animals, exposure dose, and signal frequency."
+Which model is used as the baseline for classification and EQA tasks?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+",The Bidirectional Encoder Representations of Transformers (BERT) model is used as the baseline model for classification and EQA tasks.
+How many EMF-related research papers are used for fine-tuning?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+",The models are fine-tuned with 455 EMF-related research papers.
+What improvements were observed in the fine-tuned model on EQA tasks?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+",The fine-tuned model showed improved performance on EQA tasks for the four-categories of questions compared to the baseline.
+What is the ultimate goal of the study?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+",The ultimate goal of the study is to develop a software system that analyzes scientific literature to help the decision-making process by assigning quality scores for each research paper.
+How does the software system categorize EMF-related scientific papers?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+","The software system processes EMF-related scientific papers to categorize them, extract information, and evaluate them."
+What are the different evaluation strategies mentioned in the study?,"
+This paper presents an overview of a quality scoring system that
+utilizes pre-trained deep neural network models. Two types of DL
+models, a classification and extractive question answering (EQA)
+models are used to implement components of the system.
+.
+.
+.
+ The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study. Copyright is held by the authors.
+APPLIED COMPUTING REVIEW MAR. 2022, VOL. 22, NO. 1 31
+Figure 1: Overview of a paper quality scoring system
+Figure 1 shows an overview of the software system. T
+","Different evaluation strategies are required for in-vivo and in-vitro studies. The number of animals can be an important factor in an in-vivo study; however, the same criteria are not applicable for an in-vitro study."

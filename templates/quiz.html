@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/quiz.css') }}">
+    <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css">
+    <title>Quizzet</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .navbar {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+        }
+        .navbar-item strong {
+            color: white;
+        }
+        .section {
+            margin-top: 60px;
+        }
+        .scp-quizzes-main {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .scp-quizzes-data h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .scp-quizzes-data label {
+            display: block;
+            background-color: #fff;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            margin: 5px 0;
+        }
+        .scp-quizzes-data input[type="radio"] {
+            display: none;
+        }
+        .scp-quizzes-data input[type="radio"]:checked + label {
+            background-color: #6a11cb;
+            color: #fff;
+            border-color: #6a11cb;
+            animation: pulse 0.5s;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .button {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            transform: translateY(-3px);
+        }
+        .footer {
+            margin-top: 50px;
+            background-color: #363636;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('label').click(function () {
+                $('label').removeClass('worngans');
+                $(this).addClass('worngans');
+            });
+
+            $('form').on('submit', function (e) {
+                let allAnswered = true;
+                $('.scp-quizzes-data').each(function () {
+                    if (!$(this).find('input[type="radio"]:checked').length) {
+                        allAnswered = false;
+                        $(this).find('label').css('border-color', 'red');
+                    }
+                });
+                if (!allAnswered) {
+                    e.preventDefault();
+                    alert('Please answer all questions before submitting.');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar is-dark is-fixed-top has-text-centered" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img src="https://avatars0.githubusercontent.com/u/65834464?s=200&amp;v=4" height="32" width="64" style="margin: 7px">
+            <a class="navbar-item has-text-centered" href="{{ url_for('index') }}">
+                <strong class="is-size-3 has-text-centered">MLH Quizzet</strong>
+            </a>
+            <a class="github-fork-ribbon" href="https://github.com/PragatiVerma18/Fantastic-Falcons-1.0" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+            <div class="navbar-burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Quiz</h1>
+            {% if uploaded == true %}
+            <form action="{{ url_for('result') }}" method="POST">
+                {% for i in range(size) %}
+                <div class="scp-quizzes-main">
+                    <div class="scp-quizzes-data">
+                        <h3>{{ i+1 }}. {{ questions[i+1]['question'] }}</h3>
+                        {% for op in questions[i+1]['options'] %}
+                        <input type="radio" id="question{{ i+1 }}{{ op }}" name="question{{ i+1 }}" value="{{ op }}">
+                        <label for="question{{ i+1 }}{{ op }}">{{ op }}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="has-text-centered">
+                    <button type="submit" class="button is-dark has-text-weight-bold is-fullwidth is-rounded">Submit</button>
+                </div>
+            </form>
+            {% else %}
+            <div class="notification is-danger">
+                <h1>Could not upload file</h1>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <footer class="footer">
+        MIT License © Copyright 2020 Fantastic Falcons
+    </footer>
+</body>
+</html>

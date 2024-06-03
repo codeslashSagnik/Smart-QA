@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    input[type="text"], textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    button[type="submit"] {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button[type="submit"]:hover {
+        background-color: #218838;
+    }
+    .answer-box {
+        margin-top: 20px;
+    }
+    .answer-box label {
+        font-weight: bold;
+    }
+    .answer-box textarea {
+        height: 150px;
+        resize: none;
+        background-color: #f9f9f9;
+    }
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #222;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Smart Question Answering System</h1>
+    <form action="/ask_question/{{ model }}/{{ file_path }}" method="POST">
+        <label for="question">Question</label>
+        <input type="text" id="question" name="question" placeholder="Enter your question..." value="{{ question }}">
+        <button type="submit" name="btn" value="qa">Submit</button>
+    </form>
+    <div class="answer-box">
+        <label for="answer">Answer</label>
+        <textarea readonly id="answer" name="answer">{{ answer }}</textarea>
+    </div>
+</div>
+
+<footer>
+    Created with <span style="color: #e25555;">&hearts;</span> by <a href="#" style="color: #fff; text-decoration: none;">Group G7</a>
+</footer>
+
+</body>
+</html>
